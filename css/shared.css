@@ -1,0 +1,157 @@
+/* ================================================================
+   LinkUp — Shared Design System
+   Warm, intellectual, grounded aesthetic for curated micro-meetups
+   ================================================================ */
+
+:root {
+  --espresso: #1a1614;
+  --charcoal: #2a2420;
+  --charcoal-light: #3a332e;
+  --cream: #F5F0E8;
+  --beige: #D4C8B8;
+  --muted: #9C8E80;
+  --amber: #D4A574;
+  --amber-deep: #C4956A;
+  --amber-light: #E0B584;
+  --sage: #8B9E7E;
+  --sage-muted: #6B7E60;
+}
+
+/* ---- Base ---- */
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+::selection { background-color: var(--amber); color: var(--espresso); }
+
+/* ---- Grain Texture Overlay ---- */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.022;
+  z-index: 100;
+}
+
+/* ---- Hero Ambient Glow ---- */
+.hero-glow {
+  background: radial-gradient(ellipse 700px 450px at 50% 0%, rgba(212, 165, 116, 0.07) 0%, transparent 70%);
+}
+
+/* ---- Scroll Reveal Animations ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ---- FAQ Accordion ---- */
+.faq-item .faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item .faq-body > div { overflow: hidden; }
+.faq-item.open .faq-body { grid-template-rows: 1fr; }
+.faq-item .faq-icon { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* ---- Mobile Drawer ---- */
+.drawer-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.drawer-overlay.active { opacity: 1; pointer-events: auto; }
+.drawer-panel {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.drawer-panel.active { transform: translateX(0); }
+
+/* ---- Card Hover Effects ---- */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+}
+
+/* ---- Image Hover Zoom ---- */
+.img-zoom { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.group:hover .img-zoom { transform: scale(1.06); }
+
+/* ---- Step Tracker Connector ---- */
+@media (min-width: 768px) {
+  .step-track { position: relative; }
+  .step-track::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    right: 28px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--amber) 0%, var(--sage) 50%, var(--amber) 100%);
+    opacity: 0.25;
+    z-index: 0;
+  }
+}
+
+/* ---- Focus Styles ---- */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---- Custom Scrollbar ---- */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--espresso); }
+::-webkit-scrollbar-thumb { background: var(--charcoal-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ---- Page Hero Pattern (subpages) ---- */
+.page-hero-pattern {
+  background-image:
+    radial-gradient(ellipse 600px 350px at 50% 0%, rgba(212, 165, 116, 0.06) 0%, transparent 70%),
+    linear-gradient(180deg, var(--charcoal) 0%, var(--espresso) 100%);
+}
+
+/* ---- Timeline ---- */
+.timeline-line {
+  position: absolute;
+  left: 23px;
+  top: 56px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--amber), var(--sage-muted), transparent);
+}
+
+/* ---- Masonry-lite Gallery ---- */
+@media (min-width: 768px) {
+  .gallery-masonry {
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+  .gallery-masonry > * {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .gallery-masonry {
+    columns: 3;
+  }
+}
+
+/* ---- Pulse dot ---- */
+@keyframes warmPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.warm-pulse { animation: warmPulse 2s ease-in-out infinite; }

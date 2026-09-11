@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safety & Verification — LinkUp | Navi Mumbai</title>
+  <meta name="description" content="LinkUp verifies every attendee with Government ID (Aadhaar, PAN, or DL). Learn how we protect your data and why all meetups are at vetted, well-lit public cafes.">
+  <meta property="og:title" content="Safety & Verification — LinkUp">
+  <meta property="og:description" content="Every LinkUp attendee is Government ID verified. Meetups are hosted at vetted, well-lit partner cafes across Navi Mumbai.">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-card.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config={theme:{extend:{colors:{espresso:'#1a1614',charcoal:{DEFAULT:'#2a2420',light:'#3a332e'},cream:'#F5F0E8',beige:'#D4C8B8',muted:'#9C8E80',amber:{DEFAULT:'#D4A574',deep:'#C4956A',light:'#E0B584'},sage:{DEFAULT:'#8B9E7E',muted:'#6B7E60'}},fontFamily:{serif:['"DM Serif Display"','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}}}}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/shared.css">
+</head>
+
+<body class="bg-espresso font-sans text-beige">
+  <div class="grain"></div>
+
+  <!-- ── Navigation ── -->
+  <header class="sticky top-0 z-40 border-b border-amber/10 bg-espresso/90 backdrop-blur-xl">
+    <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="LinkUp home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber text-espresso"><i data-lucide="coffee" class="h-5 w-5 stroke-[2.5]"></i></span>
+        <span class="text-xl font-extrabold tracking-tight text-cream">Link<span class="text-amber">Up</span></span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-semibold text-muted md:flex">
+        <a href="how-it-works.html" class="transition hover:text-cream">How It Works</a>
+        <a href="conversations.html" class="transition hover:text-cream">Conversations</a>
+        <a href="safety.html" class="text-cream">Safety &amp; ID Policy</a>
+        <a href="rescheduling.html" class="transition hover:text-cream">Scheduling Rules</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button data-cta class="hidden rounded-xl bg-amber px-5 py-2.5 text-sm font-bold text-espresso transition hover:bg-amber-light sm:block">Join a Table</button>
+        <button id="drawerToggle" class="rounded-lg p-2 text-muted transition hover:text-cream md:hidden" aria-label="Open menu"><i data-lucide="menu" class="h-5 w-5"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileDrawer" class="fixed inset-0 z-50 hidden md:hidden">
+    <div id="drawerOverlay" class="drawer-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div id="drawerPanel" class="drawer-panel absolute right-0 top-0 h-full w-[280px] border-l border-amber/10 bg-espresso p-6">
+      <div class="mb-8 flex items-center justify-between">
+        <span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span>
+        <button id="drawerClose" class="rounded-lg p-2 text-muted hover:text-cream" aria-label="Close menu"><i data-lucide="x" class="h-5 w-5"></i></button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <a href="how-it-works.html" class="text-base font-semibold text-beige hover:text-amber transition">How It Works</a>
+        <a href="conversations.html" class="text-base font-semibold text-beige hover:text-amber transition">Conversations</a>
+        <a href="safety.html" class="text-base font-semibold text-amber">Safety &amp; ID Policy</a>
+        <a href="rescheduling.html" class="text-base font-semibold text-beige hover:text-amber transition">Scheduling Rules</a>
+        <hr class="my-2 border-amber/15">
+        <button data-cta class="w-full rounded-xl bg-amber px-5 py-3 text-sm font-bold text-espresso hover:bg-amber-light transition">Join a Table →</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero-pattern border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage">Your Safety Comes First</p>
+          <h1 class="mt-3 font-serif text-4xl text-cream sm:text-5xl lg:text-6xl">Safety &amp; Verification Policy</h1>
+          <p class="mt-5 text-base leading-relaxed text-muted sm:text-lg">Meaningful in-person connection needs real infrastructure. Here's exactly how we keep every table safe, verified, and accountable.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Government ID Verification ── -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+          <div class="reveal">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-sage/15">
+              <i data-lucide="shield-check" class="h-7 w-7 text-sage"></i>
+            </div>
+            <h2 class="mt-6 font-serif text-3xl text-cream sm:text-4xl">Mandatory Government ID Verification</h2>
+            <p class="mt-5 text-sm leading-relaxed text-muted">
+              Every person who sits at a LinkUp table has been verified with a valid Government-issued ID. This is non-negotiable and applies to every attendee, every time.
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-muted">
+              We accept <span class="font-semibold text-cream">Aadhaar Card</span>, <span class="font-semibold text-cream">PAN Card</span>, or <span class="font-semibold text-cream">Driving Licence</span> as valid identification. The ID is uploaded once during your first application via the Google Form.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-2">
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-8">
+              <h3 class="font-bold text-cream text-lg">What we check</h3>
+              <div class="mt-6 space-y-5">
+                <div class="flex gap-4">
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage/15">
+                    <i data-lucide="check" class="h-4 w-4 text-sage"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">Full legal name</p>
+                    <p class="text-sm text-muted">Matches the name on your application</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage/15">
+                    <i data-lucide="check" class="h-4 w-4 text-sage"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">Photo identity</p>
+                    <p class="text-sm text-muted">Valid photo on Aadhaar, PAN, or DL</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage/15">
+                    <i data-lucide="check" class="h-4 w-4 text-sage"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">Document validity</p>
+                    <p class="text-sm text-muted">Non-expired, legible Government-issued document</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber/15">
+                    <i data-lucide="x" class="h-4 w-4 text-amber"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">We do NOT store sensitive numbers</p>
+                    <p class="text-sm text-muted">Aadhaar numbers, PAN numbers, and DL numbers are not retained after verification</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Data Protection Pledge ── -->
+    <section class="border-b border-amber/8 bg-charcoal/40">
+      <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="text-center reveal">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/15">
+            <i data-lucide="lock" class="h-7 w-7 text-amber"></i>
+          </div>
+          <h2 class="mt-6 font-serif text-3xl text-cream sm:text-4xl">Data Protection Pledge</h2>
+          <p class="mx-auto mt-4 max-w-xl text-sm text-muted">Clear commitments about how we handle your information.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2">
+          <div class="reveal reveal-delay-1 rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <i data-lucide="eye-off" class="h-6 w-6 text-sage"></i>
+            <h3 class="mt-4 font-bold text-cream">Never Shared with Attendees</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">Other people at your table will never see your ID, your full name from the ID, or any personal identification details. They only know the first name you provide.</p>
+          </div>
+
+          <div class="reveal reveal-delay-2 rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <i data-lucide="building" class="h-6 w-6 text-amber"></i>
+            <h3 class="mt-4 font-bold text-cream">Never Shared with Cafes</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">Partner cafes receive only a table reservation under the LinkUp name. They never receive attendee IDs, phone numbers, or personal information.</p>
+          </div>
+
+          <div class="reveal reveal-delay-3 rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <i data-lucide="globe" class="h-6 w-6 text-sage"></i>
+            <h3 class="mt-4 font-bold text-cream">Never Stored Publicly</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">Your ID is stored in a restricted-access system, accessible only to the verification team. It is never uploaded to public servers, social media, or shared databases.</p>
+          </div>
+
+          <div class="reveal reveal-delay-4 rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <i data-lucide="trash-2" class="h-6 w-6 text-amber"></i>
+            <h3 class="mt-4 font-bold text-cream">Purpose-Limited Use</h3>
+            <p class="mt-2 text-sm text-muted leading-relaxed">Your ID is used solely for identity verification. We do not use it for marketing, analytics, profiling, or any purpose beyond confirming you are who you say you are.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Verified Public Cafes ── -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="reveal order-2 lg:order-1">
+            <div class="rounded-2xl border border-amber/10 bg-charcoal overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="A well-lit, warm, and inviting cafe interior with natural light" class="h-64 w-full object-cover" loading="lazy">
+              <div class="p-6">
+                <p class="text-xs font-bold uppercase tracking-[0.15em] text-sage">Partner Venue Standard</p>
+                <p class="mt-2 text-sm text-muted leading-relaxed">Every LinkUp cafe is personally vetted by our team. We check lighting, seating arrangement, noise levels, accessibility, and overall safety before adding any venue to our roster.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal order-1 lg:order-2">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/15">
+              <i data-lucide="map-pin" class="h-7 w-7 text-amber"></i>
+            </div>
+            <h2 class="mt-6 font-serif text-3xl text-cream sm:text-4xl">Verified Public Cafes Only</h2>
+            <p class="mt-5 text-sm leading-relaxed text-muted">
+              Every LinkUp meetup happens at an <span class="font-semibold text-cream">established, well-lit, public cafe</span> in a known locality across Navi Mumbai. We never host at private residences, co-working spaces, or outdoor locations without proper infrastructure.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-3">
+                <i data-lucide="sun" class="mt-0.5 h-4 w-4 shrink-0 text-amber"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Well-lit spaces</span> — No basements, dim corners, or enclosed private rooms.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="users" class="mt-0.5 h-4 w-4 shrink-0 text-sage"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Staffed venues</span> — Active cafe staff present throughout the meetup.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-amber"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Known localities</span> — Kharghar, Seawoods, Belapur, Vashi, Nerul, Airoli, Panvel.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="armchair" class="mt-0.5 h-4 w-4 shrink-0 text-sage"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Reserved seating</span> — Your table is pre-booked, not first-come-first-served.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Trust Summary ── -->
+    <section class="border-b border-amber/8 bg-charcoal/40">
+      <div class="mx-auto max-w-4xl px-5 py-16 sm:py-20 lg:px-8">
+        <div class="reveal rounded-2xl border border-amber/15 bg-gradient-to-br from-amber/5 to-sage/5 p-8 sm:p-10 text-center">
+          <h3 class="font-serif text-2xl text-cream sm:text-3xl">Our safety promise, in plain language.</h3>
+          <div class="mx-auto mt-8 max-w-2xl space-y-4 text-left">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="mt-0.5 h-5 w-5 shrink-0 text-sage"></i>
+              <p class="text-sm text-beige">Every person at your table has been ID-verified with Aadhaar, PAN, or Driving Licence.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="mt-0.5 h-5 w-5 shrink-0 text-sage"></i>
+              <p class="text-sm text-beige">Your ID is never shown to other attendees, cafe partners, or third parties.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="mt-0.5 h-5 w-5 shrink-0 text-sage"></i>
+              <p class="text-sm text-beige">All meetups happen at vetted, well-lit, public cafes with active staff.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="mt-0.5 h-5 w-5 shrink-0 text-sage"></i>
+              <p class="text-sm text-beige">Group sizes are strictly 3–5 people. No solo meetups, no large mixers.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="mt-0.5 h-5 w-5 shrink-0 text-sage"></i>
+              <p class="text-sm text-beige">The exact cafe and table number are shared 24 hours in advance via WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CTA Section ── -->
+    <section class="bg-gradient-to-r from-charcoal via-charcoal-light/50 to-charcoal">
+      <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20 lg:px-8">
+        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-sage/15">
+          <i data-lucide="shield-check" class="h-8 w-8 text-sage"></i>
+        </div>
+        <h2 class="max-w-lg font-serif text-3xl text-cream sm:text-4xl">Safe tables. Real people. Great coffee.</h2>
+        <p class="max-w-md text-sm text-muted">Every seat is verified. Every venue is vetted. Join with confidence.</p>
+        <button data-cta class="rounded-xl bg-amber px-8 py-4 text-sm font-bold text-espresso transition hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-lg hover:shadow-amber/20">
+          Reserve Your Seat →
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="border-t border-amber/10 bg-charcoal">
+    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div>
+          <a href="index.html" class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber text-espresso"><i data-lucide="coffee" class="h-4 w-4 stroke-[2.5]"></i></span><span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span></a>
+          <p class="mt-4 max-w-xs text-sm text-muted">Curated tables of 3–5 verified people with shared interests. Weekend meetups across Navi Mumbai.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-cream">Our Navi Mumbai Nodes</h4>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Kharghar</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Belapur</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Seawoods</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Nerul</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Vashi</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Airoli</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Panvel</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-cream">Quick Links</h4>
+          <div class="mt-4 flex flex-col gap-2.5">
+            <a href="how-it-works.html" class="text-sm text-muted transition hover:text-amber">How It Works</a>
+            <a href="conversations.html" class="text-sm text-muted transition hover:text-amber">Conversations</a>
+            <a href="rescheduling.html" class="text-sm text-muted transition hover:text-amber">Scheduling Policy</a>
+            <a href="https://wa.me/919999999999?text=Hi%20LinkUp%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="flex items-center gap-1.5 text-sm text-muted transition hover:text-amber"><i data-lucide="message-circle" class="h-3.5 w-3.5"></i>WhatsApp Support</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col gap-3 border-t border-amber/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-muted">© <span id="year"></span> LinkUp. All rights reserved.</p>
+        <p class="text-xs text-muted/60">Your data is handled with care. IDs are verified for safety and never shared publicly.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+</body>
+</html>

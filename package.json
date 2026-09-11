@@ -1,0 +1,11 @@
+{
+  "name": "linkup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LinkUp curated meetup website and application API",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=18" }
+}

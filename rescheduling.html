@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheduling & Rescheduling — LinkUp | Navi Mumbai</title>
+  <meta name="description" content="How LinkUp coordinates timing, handles schedule changes, and manages the seat fee. Transparent policies for rescheduling, roll-overs, and cancellations.">
+  <meta property="og:title" content="Scheduling & Rescheduling — LinkUp">
+  <meta property="og:description" content="How we select the optimal time slot, handle roll-overs, and manage seat fees. Fully transparent scheduling policy.">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-card.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config={theme:{extend:{colors:{espresso:'#1a1614',charcoal:{DEFAULT:'#2a2420',light:'#3a332e'},cream:'#F5F0E8',beige:'#D4C8B8',muted:'#9C8E80',amber:{DEFAULT:'#D4A574',deep:'#C4956A',light:'#E0B584'},sage:{DEFAULT:'#8B9E7E',muted:'#6B7E60'}},fontFamily:{serif:['"DM Serif Display"','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}}}}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/shared.css">
+</head>
+
+<body class="bg-espresso font-sans text-beige">
+  <div class="grain"></div>
+
+  <!-- ── Navigation ── -->
+  <header class="sticky top-0 z-40 border-b border-amber/10 bg-espresso/90 backdrop-blur-xl">
+    <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="LinkUp home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber text-espresso"><i data-lucide="coffee" class="h-5 w-5 stroke-[2.5]"></i></span>
+        <span class="text-xl font-extrabold tracking-tight text-cream">Link<span class="text-amber">Up</span></span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-semibold text-muted md:flex">
+        <a href="how-it-works.html" class="transition hover:text-cream">How It Works</a>
+        <a href="conversations.html" class="transition hover:text-cream">Conversations</a>
+        <a href="safety.html" class="transition hover:text-cream">Safety &amp; ID Policy</a>
+        <a href="rescheduling.html" class="text-cream">Scheduling Rules</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button data-cta class="hidden rounded-xl bg-amber px-5 py-2.5 text-sm font-bold text-espresso transition hover:bg-amber-light sm:block">Join a Table</button>
+        <button id="drawerToggle" class="rounded-lg p-2 text-muted transition hover:text-cream md:hidden" aria-label="Open menu"><i data-lucide="menu" class="h-5 w-5"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mobileDrawer" class="fixed inset-0 z-50 hidden md:hidden">
+    <div id="drawerOverlay" class="drawer-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div id="drawerPanel" class="drawer-panel absolute right-0 top-0 h-full w-[280px] border-l border-amber/10 bg-espresso p-6">
+      <div class="mb-8 flex items-center justify-between">
+        <span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span>
+        <button id="drawerClose" class="rounded-lg p-2 text-muted hover:text-cream" aria-label="Close menu"><i data-lucide="x" class="h-5 w-5"></i></button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <a href="how-it-works.html" class="text-base font-semibold text-beige hover:text-amber transition">How It Works</a>
+        <a href="conversations.html" class="text-base font-semibold text-beige hover:text-amber transition">Conversations</a>
+        <a href="safety.html" class="text-base font-semibold text-beige hover:text-amber transition">Safety &amp; ID Policy</a>
+        <a href="rescheduling.html" class="text-base font-semibold text-amber">Scheduling Rules</a>
+        <hr class="my-2 border-amber/15">
+        <button data-cta class="w-full rounded-xl bg-amber px-5 py-3 text-sm font-bold text-espresso hover:bg-amber-light transition">Join a Table →</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero-pattern border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">Scheduling Policy</p>
+          <h1 class="mt-3 font-serif text-4xl text-cream sm:text-5xl lg:text-6xl">Scheduling, Rescheduling &amp; Seat Fees</h1>
+          <p class="mt-5 text-base leading-relaxed text-muted sm:text-lg">How we coordinate timing, handle schedule changes, and manage the reservation fee. Everything transparent, nothing hidden.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── How Scheduling Works ── -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="reveal">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/15">
+            <i data-lucide="calendar-range" class="h-7 w-7 text-amber"></i>
+          </div>
+          <h2 class="mt-6 font-serif text-3xl text-cream sm:text-4xl">How We Select the Final Time Slot</h2>
+          <p class="mt-5 text-sm leading-relaxed text-muted">
+            LinkUp does not work on a first-come-first-served basis. Instead, the company selects the optimal meeting slot based on <span class="font-semibold text-cream">group availability overlap</span>.
+          </p>
+        </div>
+
+        <div class="reveal mt-10 rounded-2xl border border-amber/10 bg-charcoal p-8">
+          <h3 class="font-bold text-cream text-lg mb-6">The scheduling process</h3>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber text-espresso font-bold text-xs">1</div>
+              <div>
+                <p class="text-sm font-semibold text-cream">You share broad availability windows</p>
+                <p class="mt-1 text-sm text-muted">In the application form, you select which days and time ranges work for you (e.g., "Saturday afternoon" or "Sunday morning").</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage text-espresso font-bold text-xs">2</div>
+              <div>
+                <p class="text-sm font-semibold text-cream">We find the best overlap across 3–5 people</p>
+                <p class="mt-1 text-sm text-muted">Our team cross-references availability across all matched profiles and identifies the time slot that works for the most people in your group.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber text-espresso font-bold text-xs">3</div>
+              <div>
+                <p class="text-sm font-semibold text-cream">The company finalizes the slot</p>
+                <p class="mt-1 text-sm text-muted">LinkUp has final discretion on timing. We aim to maximize overlap, but the final decision factors in cafe availability, travel distances, and group balance.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage text-espresso font-bold text-xs">4</div>
+              <div>
+                <p class="text-sm font-semibold text-cream">You're notified via WhatsApp</p>
+                <p class="mt-1 text-sm text-muted">Once the slot is locked, you receive a confirmation message with the finalized day, time window, and broad locality. The exact cafe follows 24 hours before.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Rescheduling & Roll-Over ── -->
+    <section class="border-b border-amber/8 bg-charcoal/40">
+      <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="text-center reveal">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-sage/15">
+            <i data-lucide="refresh-cw" class="h-7 w-7 text-sage"></i>
+          </div>
+          <h2 class="mt-6 font-serif text-3xl text-cream sm:text-4xl">Rescheduling &amp; Roll-Over Rules</h2>
+          <p class="mx-auto mt-4 max-w-xl text-sm text-muted">Schedules change. Here's how we handle it fairly.</p>
+        </div>
+
+        <div class="mt-12 space-y-6">
+          <!-- Scenario 1 -->
+          <div class="reveal rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber/15 text-xs font-bold text-amber">A</span>
+              <h3 class="font-bold text-cream">Your availability changes before confirmation</h3>
+            </div>
+            <p class="text-sm text-muted leading-relaxed">If you notify us before your table is confirmed and the seat fee is collected, we'll simply roll you over to the next compatible slot. No fee, no penalty. Let us know via WhatsApp as early as possible.</p>
+          </div>
+
+          <!-- Scenario 2 -->
+          <div class="reveal rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage/15 text-xs font-bold text-sage">B</span>
+              <h3 class="font-bold text-cream">Your schedule clashes after confirmation</h3>
+            </div>
+            <p class="text-sm text-muted leading-relaxed">If your confirmed table's time no longer works, we'll attempt to move you to another compatible table that weekend. If no alternative exists, the seat fee is <span class="font-semibold text-cream">non-refundable</span> as the cafe reservation and group coordination have already been locked.</p>
+          </div>
+
+          <!-- Scenario 3 -->
+          <div class="reveal rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber/15 text-xs font-bold text-amber">C</span>
+              <h3 class="font-bold text-cream">A table needs rebalancing</h3>
+            </div>
+            <p class="text-sm text-muted leading-relaxed">If another attendee drops out and the table falls below 3 people, we may merge groups, defer the table to the following weekend, or cancel. If <span class="font-semibold text-cream">we</span> cancel a confirmed table and cannot offer a reasonable alternative, your seat fee is fully refunded.</p>
+          </div>
+
+          <!-- Scenario 4 -->
+          <div class="reveal rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sage/15 text-xs font-bold text-sage">D</span>
+              <h3 class="font-bold text-cream">No-show on the day</h3>
+            </div>
+            <p class="text-sm text-muted leading-relaxed">If you don't show up without notifying us in advance, the seat fee is forfeited. No-shows disrupt the experience for the 3–4 other people who planned their day around the table. We take attendance seriously.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Seat Fee Transparency ── -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+          <div class="reveal">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber/15">
+              <i data-lucide="indian-rupee" class="h-7 w-7 text-amber"></i>
+            </div>
+            <h2 class="mt-6 font-serif text-3xl text-cream sm:text-4xl">Seat Fee &amp; Cancellation Guidelines</h2>
+            <p class="mt-5 text-sm leading-relaxed text-muted">
+              The seat fee is a flat, non-refundable reservation charge collected at the end of the Google Form after your table is confirmed. It exists for three reasons:
+            </p>
+            <div class="mt-6 space-y-4">
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-sage"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Guarantee attendance.</span> Skin in the game dramatically reduces no-shows.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-sage"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Reserve the cafe table.</span> Partner cafes hold tables for LinkUp — the fee ensures that reservation is honoured.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-sage"></i>
+                <p class="text-sm text-muted"><span class="font-semibold text-cream">Support curation.</span> ID verification, group matching, and logistics coordination require time and care.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2">
+            <div class="rounded-2xl border border-amber/10 bg-charcoal overflow-hidden">
+              <div class="border-b border-amber/10 bg-charcoal-light/50 px-6 py-4">
+                <h3 class="font-bold text-cream">Fee Collection Timeline</h3>
+              </div>
+              <div class="divide-y divide-amber/8">
+                <div class="flex items-center gap-4 p-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sage/15">
+                    <i data-lucide="file-text" class="h-5 w-5 text-sage"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">Application submitted</p>
+                    <p class="text-xs text-muted">No payment collected at this stage</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber/15">
+                    <i data-lucide="users" class="h-5 w-5 text-amber"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">Table confirmed</p>
+                    <p class="text-xs text-muted">Seat fee link sent via WhatsApp</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sage/15">
+                    <i data-lucide="credit-card" class="h-5 w-5 text-sage"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">Payment collected</p>
+                    <p class="text-xs text-muted">Flat non-refundable fee via UPI / secure link</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 p-5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber/15">
+                    <i data-lucide="map-pin" class="h-5 w-5 text-amber"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-cream">24h before — Cafe revealed</p>
+                    <p class="text-xs text-muted">Exact cafe, table number, Google Maps pin</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-xl border border-sage/20 bg-sage/5 p-5">
+              <p class="text-sm font-semibold text-cream">Refund exception</p>
+              <p class="mt-2 text-sm text-muted leading-relaxed">If LinkUp cancels a confirmed table and cannot offer a reasonable alternative slot, the seat fee is <span class="font-semibold text-sage">fully refunded</span>. This applies only to company-side cancellations, not attendee-initiated changes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── FAQ specific to scheduling ── -->
+    <section class="border-b border-amber/8 bg-charcoal/40">
+      <div class="mx-auto max-w-3xl px-5 py-20 sm:py-28">
+        <div class="text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">Scheduling FAQ</p>
+          <h2 class="mt-3 font-serif text-3xl text-cream sm:text-4xl">Common scheduling questions.</h2>
+        </div>
+
+        <div class="mt-12 divide-y divide-amber/10 border-y border-amber/10 reveal">
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>Can I choose a specific day and time?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body"><div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">You provide broad availability windows (e.g., Saturday 2–6 PM). The final slot is determined by LinkUp based on group overlap. We cannot guarantee a specific hour.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>What if I'm available only one day?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body"><div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">That's fine — share what works. It may take longer to match you with a compatible group, but we'll find the right table when the overlap works.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>How far in advance should I apply?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body"><div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">The earlier, the better. Applications submitted by Monday give us the full week to form groups and coordinate. Late-week applications may be rolled over to the following weekend.</p></div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>Can I attend multiple tables in one weekend?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body"><div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">Currently, we assign one table per person per weekend. This keeps each experience focused and prevents scheduling conflicts. You can apply again for the following weekend.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CTA Section ── -->
+    <section class="bg-gradient-to-r from-charcoal via-charcoal-light/50 to-charcoal">
+      <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20 lg:px-8">
+        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber/15">
+          <i data-lucide="calendar-check" class="h-8 w-8 text-amber"></i>
+        </div>
+        <h2 class="max-w-lg font-serif text-3xl text-cream sm:text-4xl">We handle the scheduling. You bring the curiosity.</h2>
+        <p class="max-w-md text-sm text-muted">Apply now — we'll find the best slot for your group.</p>
+        <button data-cta class="rounded-xl bg-amber px-8 py-4 text-sm font-bold text-espresso transition hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-lg hover:shadow-amber/20">
+          Apply for This Weekend →
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="border-t border-amber/10 bg-charcoal">
+    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div>
+          <a href="index.html" class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber text-espresso"><i data-lucide="coffee" class="h-4 w-4 stroke-[2.5]"></i></span><span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span></a>
+          <p class="mt-4 max-w-xs text-sm text-muted">Curated tables of 3–5 verified people with shared interests. Weekend meetups across Navi Mumbai.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-cream">Our Navi Mumbai Nodes</h4>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Kharghar</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Belapur</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Seawoods</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Nerul</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Vashi</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Airoli</span><span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Panvel</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-cream">Quick Links</h4>
+          <div class="mt-4 flex flex-col gap-2.5">
+            <a href="how-it-works.html" class="text-sm text-muted transition hover:text-amber">How It Works</a>
+            <a href="conversations.html" class="text-sm text-muted transition hover:text-amber">Conversations</a>
+            <a href="safety.html" class="text-sm text-muted transition hover:text-amber">Safety &amp; Privacy</a>
+            <a href="https://wa.me/919999999999?text=Hi%20LinkUp%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="flex items-center gap-1.5 text-sm text-muted transition hover:text-amber"><i data-lucide="message-circle" class="h-3.5 w-3.5"></i>WhatsApp Support</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col gap-3 border-t border-amber/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-muted">© <span id="year"></span> LinkUp. All rights reserved.</p>
+        <p class="text-xs text-muted/60">Your data is handled with care. IDs are verified for safety and never shared publicly.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+</body>
+</html>

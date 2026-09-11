@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkUp — Real Conversations Over Coffee | Navi Mumbai</title>
+  <meta name="description" content="LinkUp curates weekend tables of 3–5 verified people with shared interests over coffee. Thoughtful discussions on startups, books, fitness, and ideas across Navi Mumbai.">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:title" content="LinkUp — Real Conversations Over Coffee in Navi Mumbai">
+  <meta property="og:description" content="Curated tables of 3–5 verified people with shared interests. Weekend meetups across Kharghar, Seawoods, Belapur, Vashi & more.">
+  <meta property="og:image" content="https://yourdomain.com/assets/og-card.png">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LinkUp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LinkUp — Real Conversations Over Coffee">
+  <meta name="twitter:description" content="Curated weekend tables of 3–5 verified people across Navi Mumbai.">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/og-card.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          espresso: '#1a1614',
+          charcoal: { DEFAULT: '#2a2420', light: '#3a332e' },
+          cream: '#F5F0E8',
+          beige: '#D4C8B8',
+          muted: '#9C8E80',
+          amber: { DEFAULT: '#D4A574', deep: '#C4956A', light: '#E0B584' },
+          sage: { DEFAULT: '#8B9E7E', muted: '#6B7E60' },
+        },
+        fontFamily: {
+          serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/shared.css">
+</head>
+
+<body class="bg-espresso font-sans text-beige">
+
+  <!-- Grain Texture Overlay -->
+  <div class="grain"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       STICKY NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 border-b border-amber/10 bg-espresso/90 backdrop-blur-xl">
+    <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <!-- Wordmark -->
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="LinkUp home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber text-espresso">
+          <i data-lucide="coffee" class="h-5 w-5 stroke-[2.5]"></i>
+        </span>
+        <span class="text-xl font-extrabold tracking-tight text-cream">Link<span class="text-amber">Up</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden items-center gap-8 text-sm font-semibold text-muted md:flex">
+        <a href="how-it-works.html" class="transition hover:text-cream">How It Works</a>
+        <a href="conversations.html" class="transition hover:text-cream">Conversations</a>
+        <a href="safety.html" class="transition hover:text-cream">Safety &amp; ID Policy</a>
+        <a href="rescheduling.html" class="transition hover:text-cream">Scheduling Rules</a>
+      </div>
+
+      <!-- CTA + Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <button data-cta class="hidden rounded-xl bg-amber px-5 py-2.5 text-sm font-bold text-espresso transition hover:bg-amber-light sm:block">Join a Table</button>
+        <button id="drawerToggle" class="rounded-lg p-2 text-muted transition hover:text-cream md:hidden" aria-label="Open menu">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 hidden md:hidden">
+    <div id="drawerOverlay" class="drawer-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div id="drawerPanel" class="drawer-panel absolute right-0 top-0 h-full w-[280px] border-l border-amber/10 bg-espresso p-6">
+      <div class="mb-8 flex items-center justify-between">
+        <span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span>
+        <button id="drawerClose" class="rounded-lg p-2 text-muted hover:text-cream" aria-label="Close menu"><i data-lucide="x" class="h-5 w-5"></i></button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <a href="how-it-works.html" class="text-base font-semibold text-beige hover:text-amber transition">How It Works</a>
+        <a href="conversations.html" class="text-base font-semibold text-beige hover:text-amber transition">Conversations</a>
+        <a href="safety.html" class="text-base font-semibold text-beige hover:text-amber transition">Safety &amp; ID Policy</a>
+        <a href="rescheduling.html" class="text-base font-semibold text-beige hover:text-amber transition">Scheduling Rules</a>
+        <hr class="my-2 border-amber/15">
+        <button data-cta class="w-full rounded-xl bg-amber px-5 py-3 text-sm font-bold text-espresso hover:bg-amber-light transition">Join a Table →</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden border-b border-amber/8">
+      <div class="hero-glow absolute inset-0"></div>
+
+      <div class="relative mx-auto max-w-7xl px-5 pb-20 pt-24 text-center sm:pb-28 sm:pt-32 lg:px-8">
+        <!-- Tag -->
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber/20 bg-amber/5 px-4 py-1.5 text-xs font-semibold text-amber">
+          <i data-lucide="map-pin" class="h-3.5 w-3.5"></i>
+          Navi Mumbai's Curated Coffee Club
+        </div>
+
+        <!-- Headline -->
+        <h1 class="mx-auto mt-8 max-w-5xl font-serif text-4xl leading-[1.12] text-cream sm:text-5xl md:text-6xl lg:text-7xl">
+          Real Conversations. Common Ground.<br>
+          <span class="text-amber">3 to 5 People Over Coffee.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+          Curated weekend tables across Navi Mumbai for people who enjoy thoughtful discussions on business, books, fitness, and ideas — without superficial small talk.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <button data-cta class="inline-flex items-center gap-2 rounded-xl bg-amber px-7 py-4 text-sm font-bold text-espresso shadow-lg shadow-amber/15 transition hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-amber/25">
+            Reserve Your Seat <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+          </button>
+          <a href="#how-it-works" class="inline-flex items-center gap-2 rounded-xl border border-amber/20 bg-amber/5 px-7 py-4 text-sm font-semibold text-cream transition hover:bg-amber/10">
+            How It Works <i data-lucide="arrow-down" class="h-4 w-4"></i>
+          </a>
+        </div>
+
+        <!-- Location Badges -->
+        <div class="mt-8 flex flex-wrap justify-center gap-2 text-xs font-medium text-muted">
+          <span class="rounded-full border border-amber/10 bg-charcoal px-3 py-1">Kharghar</span>
+          <span class="text-amber/40">•</span>
+          <span class="rounded-full border border-amber/10 bg-charcoal px-3 py-1">Seawoods</span>
+          <span class="text-amber/40">•</span>
+          <span class="rounded-full border border-amber/10 bg-charcoal px-3 py-1">Belapur</span>
+          <span class="text-amber/40">•</span>
+          <span class="rounded-full border border-amber/10 bg-charcoal px-3 py-1">Vashi</span>
+          <span class="text-amber/40">•</span>
+          <span class="rounded-full border border-amber/10 bg-charcoal px-3 py-1">Nerul</span>
+          <span class="text-amber/40">•</span>
+          <span class="rounded-full border border-amber/10 bg-charcoal px-3 py-1">Airoli</span>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="mx-auto mt-14 max-w-5xl overflow-hidden rounded-2xl border border-amber/12 shadow-2xl shadow-black/40">
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=80"
+              alt="Three young professionals engaged in a genuine, focused conversation at a warm cafe table"
+              class="h-[300px] w-full object-cover object-center sm:h-[440px] lg:h-[500px]"
+              loading="eager"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/10 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-5 sm:p-8">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">A better kind of social</p>
+              <p class="mt-2 max-w-md text-lg font-bold leading-snug text-cream sm:text-xl">
+                Good conversations start with a carefully curated table.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2 text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
+          <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="h-3.5 w-3.5 text-sage"></i>Government ID Verified</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="users" class="h-3.5 w-3.5 text-amber"></i>3–5 Per Table</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="clock" class="h-3.5 w-3.5 text-amber"></i>Venue Confirmed 24h Ahead</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         4 CORE PRINCIPLES
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">What Makes LinkUp Different</p>
+          <h2 class="mx-auto mt-3 max-w-2xl font-serif text-3xl text-cream sm:text-4xl">Built on four non-negotiable principles.</h2>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Principle 1 -->
+          <div class="reveal reveal-delay-1 card-lift rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber/10">
+              <i data-lucide="users" class="h-6 w-6 text-amber"></i>
+            </div>
+            <h3 class="mt-5 font-serif text-xl text-cream">Strictly 3 to 5 People</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">The sweet spot where everyone speaks and everyone is heard. No wallflowers, no stage-hoggers.</p>
+          </div>
+
+          <!-- Principle 2 -->
+          <div class="reveal reveal-delay-2 card-lift rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sage/10">
+              <i data-lucide="shield-check" class="h-6 w-6 text-sage"></i>
+            </div>
+            <h3 class="mt-5 font-serif text-xl text-cream">100% ID Verified</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">Aadhaar, PAN, or Driving Licence. Every single person at every table is verified for physical safety.</p>
+          </div>
+
+          <!-- Principle 3 -->
+          <div class="reveal reveal-delay-3 card-lift rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber/10">
+              <i data-lucide="compass" class="h-6 w-6 text-amber"></i>
+            </div>
+            <h3 class="mt-5 font-serif text-xl text-cream">Track-Based Alignment</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">Matched with people who share your specific curiosities — not random strangers at an open mixer.</p>
+          </div>
+
+          <!-- Principle 4 -->
+          <div class="reveal reveal-delay-4 card-lift rounded-2xl border border-amber/10 bg-charcoal p-7">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sage/10">
+              <i data-lucide="calendar-check" class="h-6 w-6 text-sage"></i>
+            </div>
+            <h3 class="mt-5 font-serif text-xl text-cream">Zero Logistics Stress</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">We coordinate timing, find the ideal cafe, and book the table. You just show up curious.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CATEGORY SHOWCASE — Photo-Backed Discussion Cards
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">Conversation Tracks</p>
+          <h2 class="mt-3 max-w-xl font-serif text-3xl text-cream sm:text-4xl">Choose the table that fits your mind.</h2>
+          <p class="mt-4 max-w-xl text-sm text-muted">Each weekend we form tables around five core tracks. Pick your curiosity and we'll match you with 3–5 people who share it.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1: Startups & Business -->
+          <div class="group reveal reveal-delay-1 card-lift overflow-hidden rounded-2xl border border-amber/10 bg-charcoal">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Small group discussion with notebooks and coffee at a cafe table" class="img-zoom h-full w-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="rounded-full bg-amber/20 px-3 py-1 text-[11px] font-bold text-amber backdrop-blur-sm">Startups &amp; Business</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg text-cream">Startups, Business &amp; Projects</h3>
+              <p class="mt-2 text-sm text-muted">Bootstrap ideas, agency growth, career pivots, and building in public. Honest conversations from people in the trenches.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Bootstrap Ideas</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Agency Growth</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Career Pivots</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Books & Philosophy -->
+          <div class="group reveal reveal-delay-2 card-lift overflow-hidden rounded-2xl border border-amber/10 bg-charcoal">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="Stack of books and coffee in a quiet, warm cafe corner" class="img-zoom h-full w-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="rounded-full bg-sage/20 px-3 py-1 text-[11px] font-bold text-sage backdrop-blur-sm">Books &amp; Philosophy</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg text-cream">Books, Philosophy &amp; Society</h3>
+              <p class="mt-2 text-sm text-muted">Psychology, non-fiction deep dives, Stoicism, urban life, and the kind of topics you wish more people cared about.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Psychology</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Non-Fiction</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Urban Life</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Fitness & Athletics -->
+          <div class="group reveal reveal-delay-3 card-lift overflow-hidden rounded-2xl border border-amber/10 bg-charcoal">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=800&q=80" alt="Athletic people at an outdoor cafe patio after a morning run" class="img-zoom h-full w-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="rounded-full bg-amber/20 px-3 py-1 text-[11px] font-bold text-amber backdrop-blur-sm">Fitness &amp; Athletics</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg text-cream">Fitness, Running &amp; Athletics</h3>
+              <p class="mt-2 text-sm text-muted">Marathon training, gym splits, trekking the Sahyadris, and building consistency. For people who move and want to talk about it.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Marathon Training</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Gym Splits</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Trekking</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Creative Arts -->
+          <div class="group reveal reveal-delay-1 card-lift overflow-hidden rounded-2xl border border-amber/10 bg-charcoal">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="A coffee table with sketches, journals, and art supplies" class="img-zoom h-full w-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="rounded-full bg-sage/20 px-3 py-1 text-[11px] font-bold text-sage backdrop-blur-sm">Creative Arts</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg text-cream">Creative Arts &amp; Design</h3>
+              <p class="mt-2 text-sm text-muted">Visual design, content creation, creative direction, filmmaking, and building an audience around your craft.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Visual Design</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Content Creation</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Creative Direction</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Tech & Modern Systems -->
+          <div class="group reveal reveal-delay-2 card-lift overflow-hidden rounded-2xl border border-amber/10 bg-charcoal">
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="A natural cafe discussion between professionals without any laptops" class="img-zoom h-full w-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent"></div>
+              <div class="absolute bottom-3 left-4">
+                <span class="rounded-full bg-amber/20 px-3 py-1 text-[11px] font-bold text-amber backdrop-blur-sm">Tech &amp; Systems</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-lg text-cream">Tech &amp; Modern Systems</h3>
+              <p class="mt-2 text-sm text-muted">AI impact, engineering architectures, digital tools, and the human side of building technology — discussed like humans, not like a stand-up.</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">AI Impact</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Engineering</span>
+                <span class="rounded-full bg-espresso px-2.5 py-1 text-[11px] font-medium text-muted">Digital Tools</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Card -->
+          <div class="reveal reveal-delay-3 flex flex-col items-center justify-center rounded-2xl border border-amber/20 bg-gradient-to-br from-amber/8 to-sage/5 p-8 text-center">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-amber/15">
+              <i data-lucide="plus" class="h-7 w-7 text-amber"></i>
+            </div>
+            <h3 class="mt-5 font-serif text-xl text-cream">Your Curiosity Here</h3>
+            <p class="mt-2 text-sm text-muted">Don't see your niche? Tell us in the form and we'll create a table when we find your people.</p>
+            <button data-cta class="mt-6 rounded-xl bg-amber px-6 py-3 text-sm font-bold text-espresso transition hover:bg-amber-light">Apply Now →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HOW IT WORKS — 4-Step Tracker
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="how-it-works" class="border-b border-amber/8 bg-charcoal/40">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">From Application to Coffee</p>
+          <h2 class="mx-auto mt-3 max-w-2xl font-serif text-3xl text-cream sm:text-4xl">Four steps to your curated table.</h2>
+        </div>
+
+        <div class="step-track relative mt-16 grid gap-8 md:grid-cols-4">
+          <!-- Step 1 -->
+          <div class="reveal reveal-delay-1 relative z-10 text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber text-espresso shadow-lg shadow-amber/20">
+              <span class="text-lg font-extrabold">1</span>
+            </div>
+            <h3 class="mt-6 font-serif text-lg text-cream">Submit Application</h3>
+            <p class="mt-2 text-sm text-muted">Choose your interest track, share broad availability, and upload a Government ID via our Google Form.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="reveal reveal-delay-2 relative z-10 text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-sage text-espresso shadow-lg shadow-sage/20">
+              <span class="text-lg font-extrabold">2</span>
+            </div>
+            <h3 class="mt-6 font-serif text-lg text-cream">Thoughtful Grouping</h3>
+            <p class="mt-2 text-sm text-muted">We match 3–5 profiles with overlapping availability, shared interests, and complementary perspectives.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="reveal reveal-delay-3 relative z-10 text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber text-espresso shadow-lg shadow-amber/20">
+              <span class="text-lg font-extrabold">3</span>
+            </div>
+            <h3 class="mt-6 font-serif text-lg text-cream">24-Hour Cafe Drop</h3>
+            <p class="mt-2 text-sm text-muted">Exact cafe name, reserved table number, and Google Maps pin — delivered to your WhatsApp 24 hours before.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="reveal reveal-delay-4 relative z-10 text-center">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-sage text-espresso shadow-lg shadow-sage/20">
+              <span class="text-lg font-extrabold">4</span>
+            </div>
+            <h3 class="mt-6 font-serif text-lg text-cream">Sit Down &amp; Discuss</h3>
+            <p class="mt-2 text-sm text-muted">Meet your curated table for 90 minutes of high-signal dialogue. No icebreakers needed — you already have common ground.</p>
+          </div>
+        </div>
+
+        <div class="mt-14 text-center reveal">
+          <button data-cta class="inline-flex items-center gap-2 rounded-xl bg-amber px-7 py-4 text-sm font-bold text-espresso transition hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-lg hover:shadow-amber/20">
+            Apply for This Weekend <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         WHY NAVI MUMBAI
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="border-b border-amber/8">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="reveal">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-sage">Made for This City</p>
+            <h2 class="mt-3 font-serif text-3xl text-cream sm:text-4xl">Why Navi Mumbai?</h2>
+            <p class="mt-5 text-sm leading-relaxed text-muted">
+              Navi Mumbai is full of ambitious, thoughtful professionals — but the social infrastructure hasn't caught up. 
+              People commute 90 minutes across the harbour bridge for a decent networking event in Bandra or Lower Parel.
+            </p>
+            <p class="mt-4 text-sm leading-relaxed text-muted">
+              LinkUp brings the conversation to <span class="text-cream font-semibold">your neighbourhood</span>. 
+              Meet near Central Park Kharghar, Seawoods Grand Central, or along Palm Beach Road — 
+              at cafes you probably walk past every weekend.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <button data-cta class="rounded-xl bg-amber px-6 py-3 text-sm font-bold text-espresso transition hover:bg-amber-light">Find My Table →</button>
+              <a href="how-it-works.html" class="rounded-xl border border-amber/20 bg-amber/5 px-6 py-3 text-sm font-semibold text-cream transition hover:bg-amber/10">Learn More</a>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-5 text-center">
+              <i data-lucide="trees" class="mx-auto h-6 w-6 text-sage"></i>
+              <p class="mt-3 text-sm font-bold text-cream">Kharghar</p>
+              <p class="mt-1 text-[11px] text-muted">Central Park area</p>
+            </div>
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-5 text-center">
+              <i data-lucide="train-front" class="mx-auto h-6 w-6 text-amber"></i>
+              <p class="mt-3 text-sm font-bold text-cream">Seawoods</p>
+              <p class="mt-1 text-[11px] text-muted">Grand Central Mall</p>
+            </div>
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-5 text-center">
+              <i data-lucide="building-2" class="mx-auto h-6 w-6 text-sage"></i>
+              <p class="mt-3 text-sm font-bold text-cream">Belapur</p>
+              <p class="mt-1 text-[11px] text-muted">CBD area</p>
+            </div>
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-5 text-center">
+              <i data-lucide="store" class="mx-auto h-6 w-6 text-amber"></i>
+              <p class="mt-3 text-sm font-bold text-cream">Vashi</p>
+              <p class="mt-1 text-[11px] text-muted">Inorbit &amp; sector cafes</p>
+            </div>
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-5 text-center">
+              <i data-lucide="waves" class="mx-auto h-6 w-6 text-sage"></i>
+              <p class="mt-3 text-sm font-bold text-cream">Nerul</p>
+              <p class="mt-1 text-[11px] text-muted">Palm Beach Road</p>
+            </div>
+            <div class="rounded-2xl border border-amber/10 bg-charcoal p-5 text-center">
+              <i data-lucide="factory" class="mx-auto h-6 w-6 text-amber"></i>
+              <p class="mt-3 text-sm font-bold text-cream">Airoli</p>
+              <p class="mt-1 text-[11px] text-muted">Mindspace &amp; IT hub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE FAQ ACCORDION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="faq" class="border-b border-amber/8">
+      <div class="mx-auto max-w-3xl px-5 py-20 sm:py-28">
+        <div class="text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber">FAQ</p>
+          <h2 class="mt-3 font-serif text-3xl text-cream sm:text-4xl">Everything you need to know.</h2>
+        </div>
+
+        <div class="mt-12 divide-y divide-amber/10 border-y border-amber/10 reveal">
+          <!-- Q1 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>Why do you collect Government IDs?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">To provide real-world accountability for everyone at the table. Your ID is used only to validate identity and is never shown to other attendees or shared with third parties.</p></div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>When will I get the cafe location?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">Your broad locality is confirmed early. The exact partner cafe name, reserved table number, and Google Maps pin are delivered to your WhatsApp exactly 24 hours before the meetup.</p></div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>Can I choose the people in my group?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">No. LinkUp makes the final group, using your interest track, intent, and availability. That independent curation is what makes the table feel fresh and balanced — not another echo chamber.</p></div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>What is the seat fee for?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">A flat, non-refundable reservation fee is collected at the end of the Google Form after your table is confirmed. It guarantees your attendance, reserves the cafe table, and supports the curation process. It does not cover food or beverages at the cafe.</p></div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>What happens if my schedule changes?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">If your availability changes before your table is confirmed, we'll roll you over to the next compatible slot. If a confirmed table needs to be rescheduled by us, we'll work to find the best alternative. See our full <a href="rescheduling.html" class="text-amber hover:text-amber-light underline">scheduling policy</a>.</p></div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>How long is each meetup?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">We reserve the table for 90 minutes. That's enough time for a rich conversation without it dragging. Of course, if the table is vibing and the cafe allows, you're welcome to stay longer on your own.</p></div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>Is LinkUp only in Navi Mumbai?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">For now, yes. We're focused on Navi Mumbai nodes — Kharghar, Belapur, Seawoods, Nerul, Vashi, Airoli, and Panvel. We want to get this right before expanding.</p></div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="faq-item">
+            <button class="faq-toggle flex w-full items-center justify-between py-5 text-left text-sm font-bold text-cream">
+              <span>Do I need to bring anything?</span>
+              <i data-lucide="plus" class="faq-icon h-4 w-4 shrink-0 text-amber"></i>
+            </button>
+            <div class="faq-body">
+              <div><p class="pb-5 pr-8 text-sm leading-relaxed text-muted">Just yourself and an open mind. Some people bring a notebook or a book related to the discussion track, but it's not required. The cafe handles food and beverages — order what you like, pay for your own.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         GOOGLE FORM APPLICATION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="apply" class="border-b border-amber/8 bg-charcoal/30">
+      <div class="mx-auto max-w-5xl px-5 py-20 sm:py-24 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-amber/20 bg-amber/5 px-4 py-1.5 text-xs font-semibold text-amber">
+            <i data-lucide="clipboard-check" class="h-3.5 w-3.5"></i>
+            LinkUp application
+          </div>
+          <h2 class="mt-5 font-serif text-3xl text-cream sm:text-4xl">Find your next table.</h2>
+          <p class="mt-4 text-sm leading-relaxed text-muted">Share your interests and exact available dates. We’ll curate the group, coordinate the plan, and confirm the cafe location at least 24 hours before the meetup.</p>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-amber/15 bg-cream p-1 shadow-2xl shadow-black/25">
+          <iframe
+            title="LinkUp — Curated Coffee Meetup Application"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSciRt_kpHrq7AfDeX9rOfgireTR83cOtiuHu_p8X7-dTDMrMw/viewform?embedded=true"
+            width="100%"
+            height="1120"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            loading="lazy">Loading…</iframe>
+        </div>
+
+        <div class="mx-auto mt-6 flex max-w-3xl flex-col items-center justify-between gap-4 rounded-xl border border-amber/15 bg-amber/5 px-5 py-4 text-center sm:flex-row sm:text-left">
+          <div class="flex items-start gap-3">
+            <i data-lucide="smartphone" class="mt-0.5 h-5 w-5 shrink-0 text-amber"></i>
+            <p class="text-xs leading-relaxed text-muted">Having trouble uploading payment proof or an image from mobile? Open the form in full screen for the smoothest experience.</p>
+          </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSciRt_kpHrq7AfDeX9rOfgireTR83cOtiuHu_p8X7-dTDMrMw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="shrink-0 rounded-lg bg-amber px-4 py-2.5 text-xs font-bold text-espresso transition hover:bg-amber-light">Open full form ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FINAL CTA BAND
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="bg-gradient-to-r from-charcoal via-charcoal-light/50 to-charcoal">
+      <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-16 text-center sm:py-20 lg:px-8">
+        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber/15">
+          <i data-lucide="coffee" class="h-8 w-8 text-amber"></i>
+        </div>
+        <h2 class="max-w-lg font-serif text-3xl text-cream sm:text-4xl">Ready for a conversation that matters?</h2>
+        <p class="max-w-md text-sm text-muted">Apply in 3 minutes. We'll handle the grouping, the scheduling, and the cafe reservation.</p>
+        <button data-cta class="rounded-xl bg-amber px-8 py-4 text-sm font-bold text-espresso transition hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-lg hover:shadow-amber/20">
+          Reserve Your Seat →
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="border-t border-amber/10 bg-charcoal">
+    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-3">
+        <!-- Brand -->
+        <div>
+          <a href="index.html" class="inline-flex items-center gap-2">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber text-espresso"><i data-lucide="coffee" class="h-4 w-4 stroke-[2.5]"></i></span>
+            <span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm text-muted">Curated tables of 3–5 verified people with shared interests. Weekend meetups across Navi Mumbai.</p>
+        </div>
+
+        <!-- Navi Mumbai Nodes -->
+        <div>
+          <h4 class="text-sm font-bold text-cream">Our Navi Mumbai Nodes</h4>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Kharghar</span>
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Belapur</span>
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Seawoods</span>
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Nerul</span>
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Vashi</span>
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Airoli</span>
+            <span class="rounded-full bg-charcoal-light px-3 py-1 text-xs font-medium text-muted">Panvel</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-bold text-cream">Quick Links</h4>
+          <div class="mt-4 flex flex-col gap-2.5">
+            <a href="how-it-works.html" class="text-sm text-muted transition hover:text-amber">How It Works</a>
+            <a href="conversations.html" class="text-sm text-muted transition hover:text-amber">Conversations</a>
+            <a href="safety.html" class="text-sm text-muted transition hover:text-amber">Safety &amp; Privacy</a>
+            <a href="rescheduling.html" class="text-sm text-muted transition hover:text-amber">Scheduling Policy</a>
+            <a href="https://wa.me/919999999999?text=Hi%20LinkUp%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="flex items-center gap-1.5 text-sm text-muted transition hover:text-amber">
+              <i data-lucide="message-circle" class="h-3.5 w-3.5"></i>WhatsApp Support
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-3 border-t border-amber/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-xs text-muted">© <span id="year"></span> LinkUp. All rights reserved. Made for better conversations in Navi Mumbai.</p>
+        <p class="text-xs text-muted/60">Your data is handled with care. IDs are verified for safety and never shared publicly.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/shared.js"></script>
+</body>
+</html>
