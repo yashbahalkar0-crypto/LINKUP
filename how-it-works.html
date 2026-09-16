@@ -28,9 +28,12 @@
   <!-- ── Navigation ── -->
   <header class="sticky top-0 z-40 border-b border-amber/10 bg-espresso/90 backdrop-blur-xl">
     <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
-      <a href="index.html" class="flex items-center gap-2.5" aria-label="LinkUp home">
-        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-amber text-espresso"><i data-lucide="coffee" class="h-5 w-5 stroke-[2.5]"></i></span>
-        <span class="text-xl font-extrabold tracking-tight text-cream">Link<span class="text-amber">Up</span></span>
+      <a href="index.html" class="flex items-center gap-3" aria-label="LinkUp home">
+        <img src="assets/linkup-mark.svg" alt="LinkUp Logo" class="h-9 w-auto">
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-cream leading-tight">Link<span class="text-amber">Up</span></span>
+          <span class="hidden lg:block text-[9px] font-extrabold tracking-wider text-amber uppercase -mt-0.5">Zero Small Talk</span>
+        </div>
       </a>
       <div class="hidden items-center gap-8 text-sm font-semibold text-muted md:flex">
         <a href="how-it-works.html" class="text-cream">How It Works</a>
@@ -49,7 +52,10 @@
     <div id="drawerOverlay" class="drawer-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
     <div id="drawerPanel" class="drawer-panel absolute right-0 top-0 h-full w-[280px] border-l border-amber/10 bg-espresso p-6">
       <div class="mb-8 flex items-center justify-between">
-        <span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span>
+        <div class="flex items-center gap-2.5">
+          <img src="assets/linkup-mark.svg" alt="LinkUp Logo" class="h-7 w-auto">
+          <span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span>
+        </div>
         <button id="drawerClose" class="rounded-lg p-2 text-muted hover:text-cream" aria-label="Close menu"><i data-lucide="x" class="h-5 w-5"></i></button>
       </div>
       <div class="flex flex-col gap-4">
@@ -294,7 +300,13 @@
     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
       <div class="grid gap-10 md:grid-cols-3">
         <div>
-          <a href="index.html" class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber text-espresso"><i data-lucide="coffee" class="h-4 w-4 stroke-[2.5]"></i></span><span class="text-lg font-extrabold text-cream">Link<span class="text-amber">Up</span></span></a>
+          <a href="index.html" class="inline-flex items-center gap-3">
+            <img src="assets/linkup-mark.svg" alt="LinkUp Logo" class="h-8 w-auto">
+            <div class="flex flex-col">
+              <span class="text-lg font-extrabold text-cream leading-tight">Link<span class="text-amber">Up</span></span>
+              <span class="text-[9px] font-extrabold tracking-wider text-amber uppercase">Real Conversations. Zero Small Talk.</span>
+            </div>
+          </a>
           <p class="mt-4 max-w-xs text-sm text-muted">Curated tables of 3–5 verified people with shared interests. Weekend meetups across Navi Mumbai.</p>
         </div>
         <div>
@@ -309,7 +321,7 @@
             <a href="conversations.html" class="text-sm text-muted transition hover:text-amber">Conversations</a>
             <a href="safety.html" class="text-sm text-muted transition hover:text-amber">Safety &amp; Privacy</a>
             <a href="rescheduling.html" class="text-sm text-muted transition hover:text-amber">Scheduling Policy</a>
-            <a href="https://wa.me/919999999999?text=Hi%20LinkUp%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="flex items-center gap-1.5 text-sm text-muted transition hover:text-amber"><i data-lucide="message-circle" class="h-3.5 w-3.5"></i>WhatsApp Support</a>
+            <a href="https://wa.me/919326659172?text=Hi%20LinkUp%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="flex items-center gap-1.5 text-sm text-muted transition hover:text-amber"><i data-lucide="message-circle" class="h-3.5 w-3.5"></i>WhatsApp Support</a>
           </div>
         </div>
       </div>

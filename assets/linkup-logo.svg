@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="100%" height="100%" fill="none" role="img" aria-label="LinkUp - Real Conversations. Zero Small Talk.">
+  <!-- Brand Emblem: Two Overlapping Coffee Cups with rising steam -->
+  <g id="cups-emblem" transform="translate(16, 12)">
+    <!-- Rising Steam plume from terracotta cup -->
+    <path d="M 44 26 C 41 18, 52 14, 49 6 C 47 2, 42 3, 40 0" 
+          stroke="#E07A5F" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+    <!-- Back Cup (Cream/Foam white cup) -->
+    <g id="back-cup" transform="translate(48, 18)">
+      <!-- Cup Handle -->
+      <path d="M 34 14 C 44 14, 44 28, 34 28" 
+            stroke="#EDE6DB" stroke-width="4.5" stroke-linecap="round" fill="none" />
+      <!-- Cup Body -->
+      <path d="M 0 0 L 34 0 C 33 22, 28 34, 17 34 C 6 34, 1 22, 0 0 Z" 
+            fill="#EDE6DB" />
+    </g>
+
+    <!-- Front Cup (Terracotta / Warm Coral Amber cup) -->
+    <g id="front-cup" transform="translate(8, 26)">
+      <!-- Cup Handle -->
+      <path d="M 2 12 C -8 12, -8 26, 2 26" 
+            stroke="#E07A5F" stroke-width="4.5" stroke-linecap="round" fill="none" />
+      <!-- Cup Body -->
+      <path d="M 2 0 L 38 0 C 37 25, 31 38, 20 38 C 9 38, 3 25, 2 0 Z" 
+            fill="#E07A5F" />
+    </g>
+  </g>
+
+  <!-- Typography & Tagline -->
+  <g id="brand-text">
+    <!-- Brand Name: LinkUp -->
+    <text x="135" y="60" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="44" 
+          font-weight="900" 
+          letter-spacing="-0.8" 
+          fill="#F5F0E8">Link<tspan fill="#EDE6DB" opacity="0.95">Up</tspan></text>
+
+    <!-- Tagline: REAL CONVERSATIONS. ZERO SMALL TALK. -->
+    <text x="136" y="88" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="12" 
+          font-weight="800" 
+          letter-spacing="2.8" 
+          fill="#E07A5F">REAL CONVERSATIONS. ZERO SMALL TALK.</text>
+  </g>
+</svg>
